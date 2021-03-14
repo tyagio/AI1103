@@ -14,7 +14,7 @@ list_of_cards =[0]*48
 list_of_cards+=[1]*4
 number_of_aces=[0,0,0]
 #list_of_cards has 48 non-aces and 4 aces,
-#where 0 deontes non ace and 1 deontes ace 
+#where 0 denotes non ace and 1 denotes ace 
 count=0
 for i in range(sample_data):
    a,b=random.sample(list_of_cards,2)
