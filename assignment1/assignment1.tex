@@ -94,12 +94,12 @@ columns=fullflexible
 \theoremstyle{remark}
 \newtheorem{rem}{Remark}
 \newcommand{\sgn}{\mathop{\mathrm{sgn}}}
-\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\abs}[1]{$\left\vert#1\right\vert$}
 \providecommand{\res}[1]{\Res\displaylimits_{#1}} 
-\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+\providecommand{\norm}[1]{$\left\lVert#1\right\rVert$}
 %\providecommand{\norm}[1]{\lVert#1\rVert}
 \providecommand{\mtx}[1]{\mathbf{#1}}
-\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\mean}[1]{$\left[ #1 \right]$}
 
 \providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
 %\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
@@ -161,7 +161,8 @@ Case 2: \emph{X} = 1\\
 Case 3: \emph{X} = 2\\
     \[Pr(X=2) = \frac{\mbox{ways of selecting 2 aces}}{\mbox{total ways of selecting 2 cards}}\]
     \[Pr(X=2) = \frac{{4 \choose 2}}{{52 \choose 2}} = \frac{6}{26\times51}\] 
- now we know that E(X) is given by\[E(X) = \sum_{i=0}^2 X\times P(X) \]    
+ now we know that E(X) denotes the average or expectation value which means that E(X) is the weighted average of all values X can take,each value being weighted by the probability of that particular event/value of X occuring\\  
+ i.e E(X) is given by\[E(X) = \frac{\sum_{i=0}^2 X\times P(X) }{\sum_{i=0}^2 P(X)}\]    
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
@@ -169,10 +170,11 @@ Case 3: \emph{X} = 2\\
 \hline
 \textbf{P(X)} & $\frac {24\times47}{26\times51}$ & $\frac {48\times4}{26\times51}$ & $\frac {6}{26\times51}$ \\
 \hline
-\textbf{X.P(X)} & 0 & $\frac {48\times4}{26\times51}$ & $\frac {12}{26\times51}$  \\
+\textbf{X$\times$ P(X)} & 0 & $\frac {48\times4}{26\times51}$ & $\frac {12}{26\times51}$  \\
 \hline 
 \end{tabular}
 \end{center}
-$\implies E(X) = \frac{48\times4}{26\times51} +\frac{12}{26\times51} =\frac{192+12}{26\times51}=\frac{2}{13} $\\ \\
+$\implies E(X) = \frac{48\times4}{26\times51} +\frac{12}{26\times51} =\frac{192+12}{26\times51}=\frac{2}{13}$\\
+
 Final answer E(x) = 2/13 or option 4
 \end{document}
