@@ -132,13 +132,13 @@ columns=fullflexible
 \renewcommand{\thetable}{\theenumi}
 Download all python codes from 
 \begin{lstlisting}
-https://github.com/tyagio/AI1103/blob/main/assignment1/codes
+https://github.com/tyagio/AI1103/tree/main/assignment1/codes
 \end{lstlisting}
 %
 and latex-tikz codes from 
 %
 \begin{lstlisting}
-https://github.com/tyagio/AI1103/blob/main/assignment1/assignment1.tex
+https://github.com/tyagio/AI1103/tree/main/assignment1/assignment1.tex
 \end{lstlisting}
 \section{Problem}
 Suppose that two cards are drawn at random from a deck of cards.Let X be the number of aces obtained.Then the value of E(X) is 
@@ -154,25 +154,25 @@ Total number of cards =52 with 4 aces,48 non-ace's and we need to select 2 cards
 so X can be 0 ,1 or 2\\ \\
 Case 1: \emph{X} = 0\\
     \[Pr(X=0) = \frac{\mbox{ways of selecting 2 non-ace's}}{\mbox{total ways of selecting 2 cards}}\]
-    \[Pr(X=0) = \frac{{48\choose 2}}{{52\choose2}} = \frac{24.47}{26.51}\]
+    \[Pr(X=0) = \frac{{48\choose 2}}{{52\choose2}} = \frac{24\times47}{26\times51}\]
 Case 2: \emph{X} = 1\\    
     \[Pr(X=1) = \frac{\mbox{ways of selecting 1 ace and 1 non-ace}}{\mbox{total ways of selecting 2 cards}}\]
-    \[Pr(X=1) = \frac{{4\choose1}.{48\choose1}}{{52\choose2}} = \frac{48.4}{26.51}\]
+    \[Pr(X=1) = \frac{{4\choose1}\times{48\choose1}}{{52\choose2}} = \frac{48\times4}{26\times51}\]
 Case 3: \emph{X} = 2\\
     \[Pr(X=2) = \frac{\mbox{ways of selecting 2 aces}}{\mbox{total ways of selecting 2 cards}}\]
-    \[Pr(X=2) = \frac{{4 \choose 2}}{{52 \choose 2}} = \frac{6}{26.51}\] 
- now we know that E(X) is given by\[E(X) = \sum_{i=0}^2\ X.P(X) \]    
+    \[Pr(X=2) = \frac{{4 \choose 2}}{{52 \choose 2}} = \frac{6}{26\times51}\] 
+ now we know that E(X) is given by\[E(X) = \sum_{i=0}^2 X\times P(X) \]    
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
 \textbf{X} & 0 & 1 & 2  \\
 \hline
-\textbf{P(X)} & $\frac {24.47}{26.51}$ & $\frac {48.4}{26.51}$ & $\frac {6}{26.51}$ \\
+\textbf{P(X)} & $\frac {24\times47}{26\times51}$ & $\frac {48\times4}{26\times51}$ & $\frac {6}{26\times51}$ \\
 \hline
-\textbf{X.P(X)} & 0 & $\frac {48.4}{26.51}$ & $\frac {12}{26.51}$  \\
+\textbf{X.P(X)} & 0 & $\frac {48\times4}{26\times51}$ & $\frac {12}{26\times51}$  \\
 \hline 
 \end{tabular}
 \end{center}
-$\implies E(X) = \frac{48.4}{26.51} +\frac{12}{26.51} =\frac{192+12}{26.51}=\frac{2}{13} $\\ \\
+$\implies E(X) = \frac{48\times4}{26\times51} +\frac{12}{26\times51} =\frac{192+12}{26\times51}=\frac{2}{13} $\\ \\
 Final answer E(x) = 2/13 or option 4
 \end{document}
