@@ -157,23 +157,23 @@ Let B denote case when second card drawn is an ace(no replacements).A and B not 
 
 Case 1: \emph{X} = 0
 \begin{multline}
-\implies \pr{X=0}=\pr{A'B'}\\ \text{i.e both selections not ace}\\
+\implies \pr{X=0}=\pr{A'B'}=\pr{A'}\times \pr{B'|A'}\\
     \text{there 51 cards and 4 aces left for 2nd draw}\\
     \pr{X=0} = \frac{48}{52} \times \frac{47}{51}=188/221\\
 \end{multline}
 
 Case 2: \emph{X} = 1
 \begin{multline}
-    \implies \pr{X=1}=\pr{AB'}+\pr{A'B}\\ \text{i.e only 1 ace}\\
-    \text{In} \pr{AB'}\text{there 51 cards and 3 aces left for 2nd draw}\\
+    \implies \pr{X=1}=\pr{AB'}+\pr{A'B }\\ 
+    \text{In} \pr{AB'}=\pr{A}\times \pr{B'|A}\\\text{there 51 cards and 3 aces left for 2nd draw}\\
     \pr{AB'} = \frac{4}{52} \times \frac{48}{51}=16/221\\  
-    \text{In} \pr{AB'}\text{there 51 cards and 4 aces left for 2nd draw}\\
+    \text{In} \pr{A'B}=\pr{A'}\times \pr{B|A'}\\\text{there 51 cards and 4 aces left for 2nd draw}\\
     \pr{A'B} = \frac{48}{52} \times \frac{4}{51}=16/221\\ 
-    \implies\pr{X=1}=\frac{16}{221}+\frac{16}{221}=\frac{32}{221}
+    \implies\pr{X=1}=\frac{16}{221}+\frac{16}{221}=\frac{32}{221}\\
 \end{multline}
 Case 3: \emph{X} = 2
 \begin{multline}
-    \implies \pr{X=2}=\pr{A'B'}\\ \text{i.e both selections ace}\\
+    \implies \pr{X=2}=\pr{AB}=\pr{A}\times\pr{B|A}\\ 
     \text{there 51 cards and 3 aces left for 2nd draw}\\
     \pr{X=2} = \frac{4}{52} \times \frac{3}{51}=1/221\\
 \end{multline}    
