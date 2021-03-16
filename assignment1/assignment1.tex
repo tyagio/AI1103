@@ -151,32 +151,47 @@ Suppose that two cards are drawn at random from a deck of cards.Let X be the num
 
 \section{Solution}
 Total number of cards =52 with 4 aces,48 non-ace's and we need to select 2 cards
-so X can be 0 ,1 or 2\\ \\
-Case 1: \emph{X} = 0\\
-    \[Pr(X=0) = \frac{\mbox{ways of selecting 2 non-ace's}}{\mbox{total ways of selecting 2 cards}}\]
-    \[Pr(X=0) = \frac{{48\choose 2}}{{52\choose2}} = \frac{24\times47}{26\times51}\]
-Case 2: \emph{X} = 1\\    
-    \[Pr(X=1) = \frac{\mbox{ways of selecting 1 ace and 1 non-ace}}{\mbox{total ways of selecting 2 cards}}\]
-    \[Pr(X=1) = \frac{{4\choose1}\times{48\choose1}}{{52\choose2}} = \frac{48\times4}{26\times51}\]
-Case 3: \emph{X} = 2\\
-    \[Pr(X=2) = \frac{\mbox{ways of selecting 2 aces}}{\mbox{total ways of selecting 2 cards}}\]
-    \[Pr(X=2) = \frac{{4 \choose 2}}{{52 \choose 2}} = \frac{6}{26\times51}\] 
- Now we know that E(X) denotes the average or expectation value which means that E(X) is the weighted average of all values X can take,each value being weighted by the probability of that particular event/value of X occuring\\  
- i.e E(X) is given by\[E(X) = \frac{\sum_{i=0}^2 X\times P(X) }{\sum_{i=0}^2 P(X)}\]\\
- But as summation of P(X) is 1,
- we get\[ E(X)=\sum_{i=0}^2 X\times P(X)\]    
+so X can be 0 ,1 or 2 \\
+Let A denote case when first card drawn is an ace i.e \pr{A}=1/13\\
+Let B denote case when second card drawn is an ace(no replacements).A and B not independent\\
+
+Case 1: \emph{X} = 0
+\begin{multline}
+\implies \pr{X=0}=\pr{A'B'}\\ \text{i.e both selections not ace}\\
+    \text{there 51 cards and 4 aces left for 2nd draw}\\
+    \pr{X=0} = \frac{48}{52} \times \frac{47}{51}=188/221\\
+\end{multline}
+
+Case 2: \emph{X} = 1
+\begin{multline}
+    \implies \pr{X=1}=\pr{AB'}+\pr{A'B}\\ \text{i.e only 1 ace}\\
+    \text{In} \pr{AB'}\text{there 51 cards and 3 aces left for 2nd draw}\\
+    \pr{AB'} = \frac{4}{52} \times \frac{48}{51}=16/221\\  
+    \text{In} \pr{AB'}\text{there 51 cards and 4 aces left for 2nd draw}\\
+    \pr{A'B} = \frac{48}{52} \times \frac{4}{51}=16/221\\ 
+    \implies\pr{X=1}=\frac{16}{221}+\frac{16}{221}=\frac{32}{221}
+\end{multline}
+Case 3: \emph{X} = 2
+\begin{multline}
+    \implies \pr{X=2}=\pr{A'B'}\\ \text{i.e both selections ace}\\
+    \text{there 51 cards and 3 aces left for 2nd draw}\\
+    \pr{X=2} = \frac{4}{52} \times \frac{3}{51}=1/221\\
+\end{multline}    
+ Now we know that E(X) denotes the average or expectation value which means that E(X) is the weighted average of all values X can take,each value being weighted by the probability of that particular event/value of X occurring\\  
+ i.e E(X) is given by\[E(X) = {\sum_{i=0}^2 X\times P(X) }\]
+
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
-\textbf{X} & 0 & 1 & 2  \\
+{\emph{X}} & 0 & 1 & 2  \\
 \hline
-\textbf{P(X)} & $\frac {24\times47}{26\times51}$ & $\frac {48\times4}{26\times51}$ & $\frac {6}{26\times51}$ \\
+{\pr{X}} &  188/221 &  32/221 &  1/221 \\
 \hline
-\textbf{X$\times$ P(X)} & 0 & $\frac {48\times4}{26\times51}$ & $\frac {12}{26\times51}$  \\
+{\emph{X}$\times$ \pr{X}} & 0 & 32/221 & 2/221  \\
 \hline 
 \end{tabular}
 \end{center}
-$\implies E(X) = \frac{48\times4}{26\times51} +\frac{12}{26\times51} =\frac{192+12}{26\times51}=\frac{2}{13}$\\
+$\implies E(X) = \frac{32 +2}{221} =\frac{2}{13}\\$
 
 Final answer E(x) = 2/13 or option 4
 \end{document}
