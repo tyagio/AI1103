@@ -143,10 +143,10 @@ https://github.com/tyagio/AI1103/tree/main/assignment2/assignment2.tex
 \section{Problem}
 A sender(S) transmits a signal,which can be one of two kinds: H and L with probabilities 0.1 and 0.9 respectively, to a receiver (R).\\
 In the graph below,the weight of an edge(u,v) is the probability of receiving v when u is transmitted,where u,v $\in$ \{H,L\}.For example the probability that the received signal is L given the transmitted signal is H is 0.7.
-\includegraphics[width=0.5\textwidth]{qnfigure.png}\\
+\includegraphics[width=\columnwidth]{qnfigure.png}\\
 If the received signal is H, the probability that the transmitted signal was H is \underline{\quad\quad\quad} ?
 \section{Solution}
-
+In our problem we have a binary channel which is not symmetric as crossover probabilities differ\\
 Let $A \in \{0,1\}$ represent the random variable, where 0 represents H being transmitted, 1 represents L being transmitted. \\
 Let $B \in \{0,1\}$ represent the random variable, where 0 represents H being received, 1 represents L being received. \\
 \begin{table}[ht]
@@ -155,12 +155,9 @@ Let $B \in \{0,1\}$ represent the random variable, where 0 represents H being re
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{|c|c|c|c|}
 \hline
-{\pr{A=0}}&0.1  &{\pr{A=1}}& 0.9  \\
-\hline
-\pr{B=0|A=0}&  0.3 &\pr{B=0|A=1}& 0.8 \\
-\hline
-{\pr{B=1|A=0}}& 0.7 &\pr{B=1|A=1}& 0.2  \\ 
-\hline 
+{\pr{A=0}}&0.1  &{\pr{A=1}}& 0.9  \\ \hline
+\pr{B=0|A=0}&  0.3 &\pr{B=0|A=1}& 0.8 \\ \hline
+{\pr{B=1|A=0}}& 0.7 &\pr{B=1|A=1}& 0.2  \\ \hline 
 \end{tabular}
 }
 \label{Tab:Tcr}
