@@ -1,0 +1,196 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{$\left\vert#1\right\vert$}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{$\left\lVert#1\right\rVert$}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{$\left[ #1 \right]$}
+
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 3}
+\author{Ojjas Tyagi - CS20BTECH11060}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+https://github.com/tyagio/AI1103/tree/main/assignment3/codes
+\end{lstlisting}
+%
+and latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/tyagio/AI1103/tree/main/assignment3/assignment3.tex
+\end{lstlisting}
+\section{Problem}
+Let X1,X2... be a sequence of independent and identically distributed random variable with
+\begin{align}
+    \pr{X_1=-1}=\pr{X_1=1}=1/2
+\end{align}
+Suppose for the standard normal random variable Z,\pr{-0.1\leq Z \leq 0.1}=0.08 .\\
+If \(S_n= \sum_{i=1}^{n^2} X_i ,\text{then} \lim_{x\to\infty} \pr{S_n >\frac{n}{10}}\) =
+\begin{enumerate}
+    \item 0.42
+    \item 0.46
+    \item 0.50
+    \item 0.54
+\end{enumerate}
+\section{Solution}
+\[p_{X_i} (n)=\pr{X_i = n}= \begin{cases}
+            \frac{1}{2}, &\text{if n= 1 or n=-1}\\
+             0, &\text{otherwise}\\
+            \end{cases}
+\]
+the Z transform for \(X_i\) is given by\\
+\begin{align}
+&P_{X_i} (z)=\frac{1}{2}(z + z^{-1})\\
+\implies& P_{S_n} (z)= \prod_{i=1}^{n^2} P_{X_i}(z)\\
+\implies& P_{S_n} (z)= \frac{1}{2^{n^2}}\sum_{i=1}^{n^2} {{n^2}\choose{i}} z^{{n^2}-i} z^{-i}
+\end{align}
+Now we can say that to find the the probability that \(-n/10 \leq S_n  \leq n/10\) is the same as finding the sum of all terms in \(P_{S_n}(z)\) where coefficient of z is between -n/10 and n/10,WOLG we can say 
+\begin{align}
+    \pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}}= \frac{1}{2^{n^2}}\sum_{i={n^2/2-n/20}}^{n^2/2 +n/20} {n^2\choose i}
+\end{align}
+Using the approximation
+\begin{align}
+    &{n\choose k}{p^k}{q^{n-k}}\simeq \frac{1}{\sqrt{ 2\pi npq}} \exp(-(k-np)^2)/(2npq))  \\
+    &\text{In our case } p=q=1/2 \nonumber
+\end{align}
+This holds for large n and hence as our n tends to infinity we can transform the summation into an integral
+which is given by
+\begin{align}
+   &\frac{\sqrt{2}}{\sqrt{\pi{n^2}}} \int_{{n^2}/2 -n/20}^{{n^2}/2 +n/20}
+   \exp(-(k-\frac{n^2}{2})^2)/(\frac{n^2}{2})) dk\\
+   \implies &\frac{\sqrt{2}}{n\sqrt{\pi}} \int_{-n/20}^{n/20}  \exp(-2 k^2/n^2) dk\\
+   \implies &\frac{1}{\sqrt{2\pi}} \int_{-1/10}^{1/10}  \exp(-k^2/2) dk
+\end{align}
+This is just \(G(0.1) - G(-0.1)\) which is given to us in the question as 0.08
+\begin{align}
+\implies \pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}}=0.08
+\end{align}
+(variable Z corresponds to standard normal random variable or \( N(0,1)\).)\\ 
+The probability distribution of \(S_n\) is symmetric about 0,hence \pr{S_n>\frac{n}{10}} = \pr{S_n<\frac{-n}{10}}\\
+\begin{align}
+  &  \implies 2\times \pr{S_n>\frac{n}{10}} + \pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}} =1\\
+  &  \implies  \pr{S_n>\frac{n}{10}}=0.92/2=0.46
+\end{align}
+Hence final solution is options 2) or 0.46
+\end{document}
