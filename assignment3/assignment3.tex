@@ -141,12 +141,12 @@ and latex-tikz codes from
 https://github.com/tyagio/AI1103/tree/main/assignment3/assignment3.tex
 \end{lstlisting}
 \section{Problem}
-Let X1,X2... be a sequence of independent and identically distributed random variable with
+Let \(X_1,X_2\)... be a sequence of independent and identically distributed random variable with
 \begin{align}
     \pr{X_1=-1}=\pr{X_1=1}=1/2
 \end{align}
 Suppose for the standard normal random variable Z,\pr{-0.1\leq Z \leq 0.1}=0.08 .\\
-If \(S_n= \sum_{i=1}^{n^2} X_i ,\text{then} \lim_{x\to\infty} \pr{S_n >\frac{n}{10}}\) =
+If \(S_n= \sum_{i=1}^{n^2} X_i ,\text{then} \lim_{n\to\infty} \pr{S_n >\frac{n}{10}}\) =
 \begin{enumerate}
     \item 0.42
     \item 0.46
@@ -154,43 +154,29 @@ If \(S_n= \sum_{i=1}^{n^2} X_i ,\text{then} \lim_{x\to\infty} \pr{S_n >\frac{n}{
     \item 0.54
 \end{enumerate}
 \section{Solution}
-\[p_{X_i} (n)=\pr{X_i = n}= \begin{cases}
+\begin{align}
+   &p_{X_i} (n)=\pr{X_i = n}=\nonumber \begin{cases}
             \frac{1}{2}, &\text{if n= 1 or n=-1}\\
              0, &\text{otherwise}\\
-            \end{cases}
-\]
-the Z transform for \(X_i\) is given by\\
-\begin{align}
-&P_{X_i} (z)=\frac{1}{2}(z + z^{-1})\\
-\implies& P_{S_n} (z)= \prod_{i=1}^{n^2} P_{X_i}(z)\\
-\implies& P_{S_n} (z)= \frac{1}{2^{n^2}}\sum_{i=1}^{n^2} {{n^2}\choose{i}} z^{{n^2}-i} z^{-i}
+            \end{cases} \\ 
+    \implies& \mu=E(X_i)=1/2(1-1)=0\\
+    \implies& \sigma^2=E({X_i}^2) -\mu^2=\frac{1}{2}(1+1) -0=1
 \end{align}
-Now we can say that to find the the probability that \(-n/10 \leq S_n  \leq n/10\) is the same as finding the sum of all terms in \(P_{S_n}(z)\) where coefficient of z is between -n/10 and n/10,WOLG we can say 
+Using Central Limit Theorem,we can say that for a series of random and identical variables \(X_i\) with \(\text{Mean} =\mu \text{ and variance}=\sigma^2  \)  where
+i \(\in {1,2...n}\)
 \begin{align}
-    \pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}}= \frac{1}{2^{n^2}}\sum_{i={n^2/2-n/20}}^{n^2/2 +n/20} {n^2\choose i}
+ \text{Let }&\overline{X_n} \equiv \frac{\sum_{i=1}^n X_i}{n}\\
+ \text{Then}& \lim_{n\to\infty}\sqrt{n}(\overline{X_n}-\mu)=N(0,\sigma^2)\\
+\implies &\lim_{n\to\infty}\frac{S_n}{n}=N(0,1)\\
+\nonumber& \text{Using value given in question }\\
+\implies&\lim_{n\to\infty}\pr{\frac{-1}{10}\leq \frac{S_n}{n} \leq\frac{1}{10}}=0.08
 \end{align}
-Using the approximation
+ 
+The probability distribution of \(S_n\) is symmetric about 0,hence \pr{S_n>\frac{n}{10}} = \pr{S_n<\frac{-n}{10}}
 \begin{align}
-    &{n\choose k}{p^k}{q^{n-k}}\simeq \frac{1}{\sqrt{ 2\pi npq}} \exp(-(k-np)^2)/(2npq))  \\
-    &\text{In our case } p=q=1/2 \nonumber
+ \implies &\lim_{n\to\infty}\pr{S_n>\frac{n}{10}}\times 2 +\\ \nonumber 
+ &\lim_{n\to\infty}\pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}} =1\\
+\implies&  \lim_{n\to\infty}\pr{S_n>\frac{n}{10}}=0.92/2=0.46
 \end{align}
-This holds for large n and hence as our n tends to infinity we can transform the summation into an integral
-which is given by
-\begin{align}
-   &\frac{\sqrt{2}}{\sqrt{\pi{n^2}}} \int_{{n^2}/2 -n/20}^{{n^2}/2 +n/20}
-   \exp(-(k-\frac{n^2}{2})^2)/(\frac{n^2}{2})) dk\\
-   \implies &\frac{\sqrt{2}}{n\sqrt{\pi}} \int_{-n/20}^{n/20}  \exp(-2 k^2/n^2) dk\\
-   \implies &\frac{1}{\sqrt{2\pi}} \int_{-1/10}^{1/10}  \exp(-k^2/2) dk
-\end{align}
-This is just \(G(0.1) - G(-0.1)\) which is given to us in the question as 0.08
-\begin{align}
-\implies \pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}}=0.08
-\end{align}
-(variable Z corresponds to standard normal random variable or \( N(0,1)\).)\\ 
-The probability distribution of \(S_n\) is symmetric about 0,hence \pr{S_n>\frac{n}{10}} = \pr{S_n<\frac{-n}{10}}\\
-\begin{align}
-  &  \implies 2\times \pr{S_n>\frac{n}{10}} + \pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}} =1\\
-  &  \implies  \pr{S_n>\frac{n}{10}}=0.92/2=0.46
-\end{align}
-Hence final solution is options 2) or 0.46
+Hence final solution is option 2) or 0.46
 \end{document}
