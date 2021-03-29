@@ -162,21 +162,18 @@ If \(S_n= \sum_{i=1}^{n^2} X_i ,\text{then} \lim_{n\to\infty} \pr{S_n >\frac{n}{
     \implies& \mu=E(X_i)=1/2(1-1)=0\\
     \implies& \sigma^2=E({X_i}^2) -\mu^2=\frac{1}{2}(1+1) -0=1
 \end{align}
-Using Central Limit Theorem,we can say that for a series of random and identical variables \(X_i\) with \(\text{Mean} =\mu \text{ and variance}=\sigma^2  \)  where
-i \(\in {1,2...n}\)
+Using Central Limit Theorem,we can say that for a series of random and identical variables \(X_i\) with \(\text{Mean} =\mu \text{ and variance}=\sigma^2  \)  where i \(\in {1,2...n}\)
 \begin{align}
  \text{Let }&\overline{X_n} \equiv \frac{\sum_{i=1}^n X_i}{n}\\
  \text{Then}& \lim_{n\to\infty}\sqrt{n}(\overline{X_n}-\mu)=N(0,\sigma^2)\\
 \implies &\lim_{n\to\infty}\frac{S_n}{n}=N(0,1)\\
-\nonumber& \text{Using value given in question }\\
-\implies&\lim_{n\to\infty}\pr{\frac{-1}{10}\leq \frac{S_n}{n} \leq\frac{1}{10}}=0.08
+\implies& S_n=n N(0,1)
 \end{align}
- 
-The probability distribution of \(S_n\) is symmetric about 0,hence \pr{S_n>\frac{n}{10}} = \pr{S_n<\frac{-n}{10}}
 \begin{align}
- \implies &\lim_{n\to\infty}\pr{S_n>\frac{n}{10}}\times 2 +\\ \nonumber 
- &\lim_{n\to\infty}\pr{\frac{-n}{10} \leq S_n \leq \frac{n}{10}} =1\\
-\implies&  \lim_{n\to\infty}\pr{S_n>\frac{n}{10}}=0.92/2=0.46
+\implies&\lim_{n\to\infty}\pr{n N(0,1) >\frac{n}{10}}\\
+\implies&\lim_{n\to\infty} \pr{N(0,1)>\frac{1}{10}}\\ \nonumber
+=& Q(0.1)=0.460172163\\
+\implies& \lim_{n\to\infty} \pr{S_n >\frac{n}{10}}\approx0.46 
 \end{align}
 Hence final solution is option 2) or 0.46
 \end{document}
