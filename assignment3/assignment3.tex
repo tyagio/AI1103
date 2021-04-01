@@ -147,7 +147,7 @@ Let \(X_1,X_2\)... be a sequence of independent and identically distributed rand
 \end{align}
 Suppose for the standard normal random variable Z,
 \begin{align}
-&\pr{-0.1\leq Z \leq 0.1}=0.08 .\\ \nonumber
+&\pr{-0.1\leq Z \leq 0.1}=0.08 .\label{qneq} \\ \nonumber
 &\text{If } S_n= \sum_{i=1}^{n^2} X_i ,\text{then} \lim_{n\to\infty} \pr{S_n >\frac{n}{10}} =
 \end{align}
 \begin{enumerate}
@@ -167,14 +167,18 @@ Suppose for the standard normal random variable Z,
 \end{align}
 Using Central Limit Theorem,we can say that for a series of random and identical variables \(X_i\) with the \(\text{Mean} =\mu \text{ and variance}=\sigma^2  \)  where i \(\in\) {1,2...n} 
 \begin{align}
- \text{Let }&\overline{X_n} \equiv \frac{\sum_{i=1}^n X_i}{n}\\
- \text{Then}& \lim_{n\to\infty}\sqrt{n}(\overline{X_n}-\mu)=N(0,\sigma^2)\\
-\implies &\lim_{n\to\infty}\frac{S_n}{n}=N(0,1)\\
-\implies& S_n=n N(0,1)\\
-\implies&\lim_{n\to\infty}\pr{n N(0,1) >\frac{n}{10}}\\
-\implies&\lim_{n\to\infty} \pr{N(0,1)>\frac{1}{10}}\\ \nonumber
-=& Q(0.1)=0.460172163\\
-\implies& \lim_{n\to\infty} \pr{S_n >\frac{n}{10}}\approx0.46 
+&\text{Let }\overline{X_n} \equiv \frac{\sum_{i=1}^n X_i}{n}\\
+&\text{Then} \lim_{n\to\infty}\sqrt{n}(\overline{X_n}-\mu)=N(0,\sigma^2)\\
+&\implies\lim_{n\to\infty}\frac{S_n}{n}=N(0,1)\\
+&\implies S_n=n N(0,1)\\
+&\implies\lim_{n\to\infty}\pr{n N(0,1) >\frac{n}{10}}\\
+&\implies\lim_{n\to\infty} \pr{N(0,1)>\frac{1}{10}}= Q(0.1)\\ \nonumber
+&\text{Now using \eqref{qneq}}\\ 
+&\implies Q(0.1)+(Q(-\infty)-Q(-0.1))+ 0.08=1\\ \nonumber
+&\text{Now as }N(0,1) \text{symmetric about 0}\\
+&\implies 2\times Q(0.1)+0.08=1\\
+&\implies Q(0.1)=0.46\\
+&\implies \lim_{n\to\infty} \pr{S_n >\frac{n}{10}}=0.46 
 \end{align}
 Hence final solution is option 2) or 0.46
 \end{document}
