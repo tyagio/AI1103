@@ -140,7 +140,7 @@ Let \(X \geq 0\) be a random variable on \(  (\Omega,\mathcal{F},P) \) with E(\e
 \begin{enumerate}
     \item \(Q(B) = P(A\cap B)\quad \forall B \in \mathcal{F} \)
     \item \(Q(B) = P(A\cup B)\quad \forall B \in \mathcal{F} \)
-    \item \(Q(B) = E(XI_B)\quad\,\,\,\,\, \forall B \in \mathcal{F} \)
+    \item \(Q(B) = E(XI_B) \quad\,\,\,\,\, \forall B \in \mathcal{F} \)
     \item Q(B) =\( \begin{cases}
          P(A|B), &\text{if \(P(B)>0\)}\\
          0, &\text{if \(P(B)=0\)}\\
@@ -148,22 +148,24 @@ Let \(X \geq 0\) be a random variable on \(  (\Omega,\mathcal{F},P) \) with E(\e
 \end{enumerate}
 \section{Solution}
 Any probability measure \(\mathbb{P}\) on \((\Omega,\mathcal{F})\) is a function from \(\mathcal{F}\) to [0,1] with the following properties
-\begin{align}
-    & \mathbb{P}(\phi)=0\\
-    & \mathbb{P}(\Omega)=1\\ \nonumber
-    &\text{If \(A_1,A_2\).... are disjoint \(\mathcal{F}\)-measurable sets}\\
-    \implies & \mathbb{P}\brak{\bigcup_{i=1}^{\infty} A_i}= \sum_{i=1}^{\infty} \mathbb{P}(A_i)
-\end{align}
+\begin{enumerate}
+   \item \(\mathbb{P}(\phi)=0 \)
+   \item \(\mathbb{P}(\Omega)=1 \)
+   \item \(\text{If \(A_1,A_2\).... are disjoint \(\mathcal{F}\)-measurable sets}\\
+    \text{then } \mathbb{P}\brak{\bigcup_{i=1}^{\infty} A_i}= \sum_{i=1}^{\infty} \mathbb{P}(A_i)\\ \)
+\end{enumerate}
 Now we know that \(E(XI_B)\geq 0\, \forall\, B\text{ as } X\geq 0\)\\
 also 
 \begin{align}
-& E(XI_B)=E(X\times 1)=1  \text{ when } B=\Omega\\
-& E(XI_B)=E(X\times0)=0  \text{ when } B=\phi\\ \nonumber
-& \text{Let } B=\bigcup_{i=1}^{\infty} A_i \text{ ,where } A_i\text{ are disjoint sets}\in \mathcal{F}\\
-\implies & E(XI_B)=\sum_{i=1}^{\infty} E(XI_{A_i}) \label{eqn1}
+& E(XI_B)=E(X\times 1)=1  \text{ when } B=\Omega \label{eqn1}\\ 
+& E(XI_B)=E(X\times0)=0  \text{ when } B=\phi  \label{eqn2} \\ \nonumber
+& \text{Let } B=\bigcup_{i=1}^{\infty} A_i \text{ ,where } A_i\text{ are disjoint sets}\in \mathcal{F}\\ 
+\implies & E(XI_B)=\sum_{i=1}^{\infty} E(XI_{A_i}) \label{eqn3}
 \end{align}
-\eqref{eqn1} is true because Indicator function \(I_B\) is 1 when element within B and 0 otherwise due to this the summation in the RHS is equivalent to \( E(XI_B)\) but calculated for smaller intervals where X is set to 0 when it is not in disjoint subinterval of B and then summed up over all subintervals to get same value as LHS.
-
+\begin{enumerate}
+\item \eqref{eqn3} is true because Indicator function \(I_B\) is 1 when element within B and 0 otherwise due to this the summation in the RHS is equivalent to \( E(XI_B)\) but calculated for smaller intervals where X is set to 0 when it is not in disjoint subinterval of B and then summed up over all subintervals to get same value as LHS.
+\item similarly \eqref{eqn1} and \eqref{eqn2} are true as \(I_B\) is always 0 for any \(\omega \in \Omega\) when \(B=\phi\) and \(I_B\) is always 1 for any \(\omega \in \Omega\) when \(B =\Omega\)
+\end{enumerate} 
 Now we can state that \[Q(B)=E(XI_B)\quad\forall B \in \mathcal{F}\] is a well defined probability measure.
 
 \(\implies\) option 3 is correct answer.
