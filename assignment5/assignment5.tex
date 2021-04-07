@@ -164,20 +164,20 @@ also that for \(Q(B) =E(XI_B)\quad  \forall B \in \mathcal{F}\) to be valid prob
 \end{align}
 Now to prove that \eqref{eqn3} is true
 \begin{align}
-& E(XI_B)=\sum_{\omega \in \Omega}\frac{ X(\omega)\times I_B(\omega)}{|\Omega|}\\ \nonumber
+& E(XI_B)=\sum_{\omega \in \Omega}{ X(\omega)P(\omega)\times I_B(\omega)}\\ \nonumber
 &\text{Now \(I_B(\omega)\) is indicator function which}\\
 &\text{is 1 if }\omega \in B \text{ and 0 if } \omega \notin  B\\
-\implies & E(XI_B)=\sum_{\omega \in B} \frac{X(\omega)}{|\Omega|}\\
-\implies & \sum_{i=1}^{\infty} E(XI_{A_i})=\sum_{i=1}^{\infty} \sum_{\omega \in A_i}\frac{X(\omega)}{|\Omega|}\\
-\implies & \sum_{\omega \in B'}\frac{X(\omega)}{|\Omega|}=E(XI_B')
+\implies & E(XI_B)=\sum_{\omega \in B} {X(\omega)P(\omega)}\\
+\implies & \sum_{i=1}^{\infty} E(XI_{A_i})=\sum_{i=1}^{\infty} \sum_{\omega \in A_i}{X(\omega)P(\omega)}\\
+\implies & \sum_{\omega \in B'}{X(\omega)P(\omega)}=E(XI_B')
 \end{align} 
 This proves that \eqref{eqn3} is true\\
 Similarly to prove \eqref{eqn1} and \eqref{eqn2}
 \begin{align} \nonumber
 &\text{if }B =\phi \\
-&\implies E(XI_B)=\sum_{\omega \in \Omega}\frac{ X(\omega)\times 0}{|\Omega|}=0\\ \nonumber
+&\implies E(XI_B)=\sum_{\omega \in \Omega}{ X(\omega)P(\omega)\times 0}=0\\ \nonumber
 &\text{Also if }B=\Omega\\
-&\implies E(XI_B)=\sum_{\omega \in \Omega}\frac{ X(\omega)\times 1}{|\Omega|}=E(X)=1
+&\implies E(XI_B)=\sum_{\omega \in \Omega}{ X(\omega) P(\omega)\times 1}=E(X)=1
 \end{align}
 This proves that \eqref{eqn1} and \eqref{eqn2} are true 
 Now we can state that \[Q(B)=E(XI_B)\quad\forall B \in \mathcal{F}\] is a well defined probability measure.
