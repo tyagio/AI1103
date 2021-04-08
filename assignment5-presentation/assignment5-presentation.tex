@@ -1,0 +1,172 @@
+\documentclass{beamer}
+\usepackage{listings}
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\usepackage{subcaption}
+\usepackage{url}
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.17}
+\usepackage{tkz-fct}
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{tkz-euclide} 
+\usetikzlibrary{calc,math}
+\usepackage{float}
+\newcommand\norm[1]{\left\lVert#1\right\rVert}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\usepackage[export]{adjustbox}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usetheme{Boadilla}
+\title{CSIR UGC NET EXAM (Dec 2018), Q.49}
+\author{Ojjas Tyagi - MA20BTECH1102/CS20BTECH11060}
+\begin{document}
+\begin{frame}
+\titlepage
+\end{frame}
+\section{Question}
+\begin{frame}
+\frametitle{CSIR UGC NET EXAM (Dec 2018), Q.49}
+\begin{block}{Question}
+Let \(X \geq 0\) be a random variable on \(  (\Omega,\mathcal{F},P) \) with E(\emph{X})= 1 .Let A \(\in \mathcal{F}\) be an event with \(0<P(A)<1\). Which of the following defines another probability measure on \((\Omega,\mathcal{F})\) ?
+\begin{enumerate}
+    \item \(Q(B) = P(A\cap B)\quad \forall B \in \mathcal{F} \)
+    \item \(Q(B) = P(A\cup B)\quad \forall B \in \mathcal{F} \)
+    \item \(Q(B) = E(XI_B) \quad\,\,\,\,\, \forall B \in \mathcal{F} \)
+    \item Q(B) =\( \begin{cases}
+         P(A|B), &\text{if \(P(B)>0\)}\\
+         0, &\text{if \(P(B)=0\)}\\
+   \end{cases} \)
+\end{enumerate}
+\end{block}
+\end{frame}
+\section{Definitions}
+\subsection{Sample space}
+\begin{frame}{Sample space \(\Omega\)}
+\begin{block}{Definition}
+Set  of all possible outcomes of a random experiment
+\end{block}
+\end{frame}
+\subsection{Event space}
+\begin{frame}{Event space \(\mathcal{F}\)}
+\begin{block}{Events}
+Subsets of \(\Omega\) which are of interest
+\end{block}
+\begin{block}{\(\sigma\)-algebra}
+A collection \(\mathcal{F}\) of subsets of \(\Omega\) is called a \(\sigma\)-algebra if:
+\begin{enumerate}
+    \item \(\phi \in \mathcal{F}\) 
+    \item  if \( A \in \mathcal{F}\) then \(A^C \in \mathcal{F}\)
+    \item if \(A_1,A_2,....\) is a countable collection of subsets in \(\mathcal{F}\),then
+    \(\bigcup_{i=1}^{\infty} A_i \in \mathcal{F}\)
+Last point also allows us to state that(Using De Morgan's law):\\
+if \(A_1,A_2,....\) is a countable collection of subsets in \(\mathcal{F}\),then
+    \(\bigcap_{i=1}^{\infty} A_i \in \mathcal{F}\)\\
+Subsets in \(\mathcal{F}\) called \(\mathcal{F}\)-measurable sets   
+\end{enumerate}
+\end{block}
+\begin{block}{Measurable space}
+     \((\Omega,\mathcal{F})\) is known as a measurable space
+\end{block}
+\end{frame}
+\subsection{Probability measure}
+\begin{frame}{Measure}
+\begin{block}{Definition}
+A measure is a function \(\mu:\mathcal{F}\to[0,\infty)\) such that:
+\begin{enumerate}
+    \item \(\mu(\phi)\)=0
+    \item if \(A_1,A_2,....\) is a countable collection of disjoint \(\mathcal{F}\)-measurable sets, then
+    \(\mu(\bigcup_{i=1}^{\infty} A_i)=\sum_{i=1}^{\infty} \mu(A_i)\)
+\end{enumerate}
+\end{block}
+\begin{block}{Measure space}
+The triple (\(\Omega,\mathcal{F},\mu\)) is called a measure space.\\
+if \(\mu(\Omega)<\infty\) then \(\mu\) is called a finite measure.\\
+\end{block}
+\begin{block}{Probability measure}
+ A probability measure \(\mathbb{P}\) on\((\Omega,\mathcal{F})\) is a measure with the special property:
+ \[\mathbb{P}(\Omega)=1\]
+\end{block}
+\end{frame}
+\subsection{random variables borel sets}
+\begin{frame}{Random variables \& Borel sets}
+\begin{block}{Borel sets}
+      A Borel set is any set that can be formed from open sets through the operations of countable union, countable intersection, and complement on some set X.\\
+      Alternatively a borel set is a member of the borel \(\sigma\) algebra which is the smallest \(\sigma\)-algebra containing all open sets on some set X and is denoted by \(\mathcal{B}(X)\).\\
+      i.e if \(B \in \mathcal{B}(X)\) then B is a borel set in X.
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{\(\mathcal{F}\)-measurable functions}
+   A function \(X:\Omega \to \mathbb{R}\) is said to be \(\mathcal{F}\)-measurable if for every
+   \(B \in \mathcal{B}(\mathbb{R})\),the pre-image \(X^{-1}(B) \in \mathcal{F}\)\\
+   Where \(X^{-1}(B)=\{\omega \in \Omega|X(\omega) \in B\}\)
+\end{block}
+\begin{block}{Random variable}
+     A random variable X on the probability space \((\Omega,\mathcal{F},\mathbb{P})\) is a \(\mathcal{F}\)-measurable function \(X:\Omega \to \mathbb{R}\)
+\end{block}
+\end{frame}
+\subsection{Solution}
+\begin{frame}{Solution}
+\begin{block}{Probability measure}
+  Any probability measure \(\mathbb{P}\) on \((\Omega,\mathcal{F})\) is a function from \(\mathcal{F}\) to [0,1] with the following properties
+\begin{enumerate}
+   \item \(\mathbb{P}(\phi)=0 \)
+   \item \(\mathbb{P}(\Omega)=1 \)
+   \item \text{If \(A_1,A_2\).... are disjoint \(\mathcal{F}\)-measurable sets}\\
+    \(\text{then } \mathbb{P}(\bigcup_{i=1}^{\infty} A_i)= \sum_{i=1}^{\infty} \mathbb{P}(A_i) \)
+\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Conditions}
+Now we know that \(E(XI_B)\geq 0\, \forall\, B\text{ as } X\geq 0\)\\
+also that for \(Q(B) =E(XI_B)\quad  \forall B \in \mathcal{F}\) to be valid probability measure
+\begin{align}
+& E(XI_B)=E(X\times 1)=1  \text{ when } B=\Omega \label{eqn1}\\ 
+& E(XI_B)=E(X\times0)=0  \text{ when } B=\phi  \label{eqn2} \\ \nonumber
+ \text{Let } &B'=\bigcup_{i=1}^{\infty} A_i \text{ ,where } A_i\text{ are disjoint sets}\in \mathcal{F}\\ 
+\implies & E(XI_{B'})=\sum_{i=1}^{\infty} E(XI_{A_i}) \label{eqn3}
+\end{align}
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{Proof}
+Now to prove that \eqref{eqn3} is true
+\begin{align}
+& E(XI_B)=\sum_{\omega \in \Omega}{ X(\omega)P(\omega)\times I_B(\omega)}\\ \nonumber
+&\text{Now \(I_B(\omega)\) is indicator function which}\\
+&\text{is 1 if }\omega \in B \text{ and 0 if } \omega \notin  B\\
+\implies & E(XI_B)=\sum_{\omega \in B} {X(\omega)P(\omega)}\\
+\implies & \sum_{i=1}^{\infty} E(XI_{A_i})=\sum_{i=1}^{\infty} \sum_{\omega \in A_i}{X(\omega)P(\omega)}\\
+\implies & \sum_{\omega \in B'}{X(\omega)P(\omega)}=E(XI_B')
+\end{align} 
+This proves that \eqref{eqn3} is true
+\end{block}
+\end{frame}
+\begin{frame}
+\begin{block}{}
+Similarly to prove \eqref{eqn1} and \eqref{eqn2}
+\begin{align} \nonumber
+&\text{if }B =\phi \\
+&\implies E(XI_B)=\sum_{\omega \in \Omega}{ X(\omega)P(\omega)\times 0}=0\\ \nonumber
+&\text{Also if }B=\Omega\\
+&\implies E(XI_B)=\sum_{\omega \in \Omega}{ X(\omega) P(\omega)\times 1}=E(X)=1
+\end{align}
+This proves that \eqref{eqn1} and \eqref{eqn2} are true
+\end{block}
+\end{frame}
+\begin{frame}{Answer}
+\begin{block}{Correct answer}
+Now using \eqref{eqn1},\eqref{eqn2} and \eqref{eqn3} we can state that \[Q(B)=E(XI_B)\quad\forall B \in \mathcal{F}\] is a well defined probability measure.
+\(\implies\) option 3 is correct answer.  
+\end{block}
+\end{frame}
+\end{document}
