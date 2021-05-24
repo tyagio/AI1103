@@ -253,16 +253,14 @@ Given by \(\sigma_{R}^{2}=E[R^2]-(E[R])^2\) ,using \eqref{moment2} and \eqref{me
         \implies& AF=\frac{2W^{(4)}(v,K_1,a_i,P_{2ij},P_2) - (W^{(2)}(v,K_1,a_i,P_{2ij},P_2))^2}{(W^{(2)}(v,K_1,a_i,P_{2ij},P_2))^2}
     \end{align}
     \end{block}
+    \end{frame}
+\begin{frame}{}
     \begin{block}{Outage Probability}
     Defined as 
     \begin{align}
         P_{out}=P_r(\gamma \leq \gamma_{th})=\int_0^{\gamma_{th}} f_{\gamma}(\gamma) d\gamma  =F_{\gamma} (\gamma_{th})
     \end{align}
     Now using \eqref{f_gamma} and \eqref{int_2} we can say
-    \end{block}
-\end{frame}
-\begin{frame}{}
-    \begin{block}{}
     \begin{align}
         &P_{out}=\frac{1}{2(2K_1P_2+1)} \sum_{i=1}^{L} a_i  \sum_{j=0}^{1} 
      \exp(-P_{2ij})  \times \label{Outage}\\ \nonumber
